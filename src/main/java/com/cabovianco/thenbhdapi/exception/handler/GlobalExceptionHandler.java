@@ -12,8 +12,6 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import java.io.IOException;
-import java.nio.file.NoSuchFileException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,19 +48,6 @@ public class GlobalExceptionHandler {
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
                 .body(ExceptionResponse.builder().message("Invalid request format.").build());
-    }
-
-    @ExceptionHandler(IOException.class)
-    ResponseEntity<ExceptionResponse> handleIOException(IOException ex) {
-        return ResponseEntity
-                .status(HttpStatus.BAD_REQUEST)
-                .body(ExceptionResponse.builder().message(ex.getMessage()).build());
-    }
-
-    @ExceptionHandler(NoSuchFileException.class)
-    ResponseEntity<ExceptionResponse> handleNoSuchFileException() {
-        return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                .body(ExceptionResponse.builder().message("File not found.").build());
     }
 
 }
