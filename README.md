@@ -1,4 +1,4 @@
-# API Documentation - The Neighbourhood
+# The Neighbourhood API Documentation
 
 ## Description
 This API provides information about the music band *The Neighbourhood*, allowing users to retrieve data about their albums and songs.
