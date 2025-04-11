@@ -61,7 +61,3 @@ This API provides information about the music band *The Neighbourhood*, allowing
     "durationInSeconds": 240
 }
 ```
-
-## Notes
-- `albumId` in songs indicates which album they belong to.
-- Response formats are in JSON.
